@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós - MSX Minds</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #6c757d;
+            --dark: #212529;
+            --accent: #0b5ed7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .mission-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .values-grid {
+            margin-top: 60px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .value-card h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .story-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0d6efd, #00c6ff);
+            color: white;
+            box-shadow: inset 0 7px 15px rgba(0, 0, 0, 0.2), inset 0 -7px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .story-image {
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .team-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        .team-member {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .team-member h5 {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .vision-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .vision-section h2 {
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .vision-section p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            border-radius: 30px;
+            padding: 14px 40px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(11, 94, 215, 0.4);
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .value-card {
+                padding: 30px 15px;
+            }
+            .team-member {
+                padding: 20px;
+            }
+            .team-member img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+
+</head>
+<body style="background-color: #D3D3D3;">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: linear-gradient(to right, #007bff, #00c6ff); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="font-weight: bold; padding: 0.5rem 1rem; border-radius: 0.25rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); border: 2px solid #fff;">MSX Minds</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="servicos.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="produtos.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contato.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br>
+  <!-- Banner -->
+  <div class="position-relative overflow-hidden" style="max-height: 600px; min-height: 300px;">
+  <img src="img/bannersite.png" 
+       class="w-100 h-100" 
+       style="object-fit: cover;"
+       alt="Banner MSX Minds">
+</div>
+ <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Uma Empresa que Acredita no Brasil</h1>
+            <p>Não somos apenas uma empresa de tecnologia. Somos um movimento — feito por brasileiros, para brasileiros — que acredita que inovação não é um luxo, mas uma necessidade para o futuro do nosso país.</p>
+        </div>
+    </section>
+
+    <!-- Missão -->
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="text-center section-title">Nossa Missão</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="lead fs-5">
+                        Nossa missão é empoderar produtores rurais, indústrias e empreendedores brasileiros com **tecnologia que pensa como eles**.  
+                        Não queremos apenas automatizar processos. Queremos **restaurar a confiança** de quem trabalha com as mãos, a mente e o coração — e que, por isso, merece mais do que soluções genéricas.
+                    </p>
+                    <p>
+                        Acreditamos que o futuro do Brasil não está nos grandes centros urbanos apenas.  
+                        Está nas fazendas do Norte do Paraná, nas linhas de produção, nos silos e nas pequenas indústrias.  
+                        E nós estamos aqui para **garantir que eles não fiquem para trás**.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center section-title text-white">Nossos Valores</h2>
+            <div class="row g-4 values-grid">
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <i class="fas fa-hand-holding-heart value-icon text-white"></i>
+                        <h4>Respeito</h4>
+                        <p class="text-white-50">Respeitamos o tempo, a experiência e a sabedoria de quem vive o campo e a fábrica. Não vemos o cliente como um usuário — vemos como um parceiro.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <i class="fas fa-bullseye value-icon text-white"></i>
+                        <h4>Integridade</h4>
+                        <p class="text-white-50">Nunca vendemos o que não entregamos. Não prometemos o que não podemos cumprir. Nosso nome é nossa maior garantia.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <i class="fas fa-lightbulb value-icon text-white"></i>
+                        <h4>Inovação com Propósito</h4>
+                        <p class="text-white-50">Não inovamos por moda. Inovamos porque precisamos resolver problemas reais — e fazer a diferença na vida de quem trabalha duro.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <i class="fas fa-hand-holding-usd value-icon text-white"></i>
+                        <h4>Resultado Compartilhado</h4>
+                        <p class="text-white-50">Se você não ganha, nós não ganhamos. Nossa remuneração está ligada ao seu crescimento. Somos sócios, não fornecedores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- História -->
+    <section class="story-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Nossa História</h2>
+                    <p class="lead">
+                        A MSX Minds nasceu em 2020, em uma pequena sala em Nova América da Colina, PR. Com um programador que veio do campo — E com um sonho simples:  
+                        <strong>“O que se faz no campo e na indústria merece mais do que tecnologia importada e desconectada da realidade brasileira.”</strong>
+                    </p>
+                    <p>
+                        Naquela época, muitos diziam: “Você não vai vender IA para um produtor rural.”  
+                        Nós respondemos: “E se ele não a entender, é porque ninguém ainda soube explicar direito?”
+                    </p>
+                    <p>
+                        Começamos com um único projeto: ajudar os produtores e industria a buscarem mais lucros de uma forma objetiva com o uso da tecnologia
+                        da informação e automação. Nossos clientes teve um ganho inicial em 6 meses, eles aumentaram sua produtividade em 32%.  
+                        Naquele momento, soubemos: isso vai além de tecnologia. É **justiça tecnológica**.
+                    </p>
+                    <p>
+                        Hoje, somos uma pequena empresa com visão no futuro em crescimento profissionais.  
+                        Não somos a maior. Não somos a mais que busca tecnologia para impulsionar o futuro.  
+                        Mas somos uma das poucas empresas no Brasil que **não vende soluções — vende esperança**.
+                    </p>
+                </div>
+           </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="text-center section-title">CEO e fundador</h2>
+             <div class="row g-4">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="img/1548248822080.jfif" alt="Marcos José Silva">
+                        <h5>Dra. Juliana Mendes</h5>
+                        <p>Cientista de Dados e especialista em inteligência artificial e automação para indústria e programador de sistemas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Visão -->
+    <section class="vision-section">
+        <div class="container">
+            <h2 class="text-center">Nossa Visão</h2>
+            <p class="lead text-center">
+                Ser a empresa mais confiável e humana da América Latina no uso da tecnologia para o desenvolvimento do agronegócio e da indústria.  
+                Um dia, queremos que crianças no interior do Brasil aprendam na escola:  
+                <strong>“Quem inventou a MSX Minds? — Quem acreditou que o Brasil poderia ser mais justo, mais inteligente e mais produtivo.”</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Chamada Final -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="display-5 fw-bold">Você também acredita que o Brasil merece mais?</h2>
+            <p class="lead mb-4">Nós acreditamos. E estamos construindo isso, um projeto de cada vez.</p>
+            <a href="contato.html" class="btn btn-primary btn-lg">Conheça a História da MSX Minds — Em Pessoa</a>
+        </div>
+    </section>
+    <br><br><br>
+  <!-- Rodapé -->
+  <footer class="bg-dark text-white text-center p-4 fixed-bottom" style="background: linear-gradient(to right, #343a40, #212529); box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); text-shadow: 1px 1px 2px black;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; TODOS OS DIREITOS RESERVADOS 2025 MSX Minds</p>
+            </div>
+            <div class="col-md-6">
+                <a href="mailto:msxminds@gmail.com" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fas fa-envelope me-1"></i> Email</a>
+                <a href="https://wa.me/43996680049" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a>
+                <a href="https://www.facebook.com/profile.php?id=61551623679912" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-facebook me-1"></i> Facebook</a>
+                <a href="https://www.instagram.com/msxminds/" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-instagram me-1"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@marcos.silva8692" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-tiktok me-1"></i> TikTok</a>
+                <a href="https://www.youtube.com/@MsxMinds" class="text-white" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-youtube me-1"></i> YouTube</a>
+            </div>
+        </div>
+    </div>
+</footer>
+ <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

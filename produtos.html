@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - MSX Minds</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background-color: #D3D3D3;">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: linear-gradient(to right, #007bff, #00c6ff); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="font-weight: bold; padding: 0.5rem 1rem; border-radius: 0.25rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); border: 2px solid #fff;">MSX Minds</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="servicos.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="produtos.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contato.html" style="padding: 0.75rem 1rem; border-radius: 0.25rem; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); background-color: rgba(255, 255, 255, 0.1); color: white !important; display: inline-block; margin-left: 5px;">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br>
+  <!-- Banner -->
+  <div class="position-relative overflow-hidden" style="max-height: 600px; min-height: 300px;">
+  <img src="img/bannersite.png" 
+       class="w-100 h-100" 
+       style="object-fit: cover;"
+       alt="Banner MSX Minds">
+</div>
+<main class="container my-5 pt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Nosso Catálogo de Produtos</h1>
+        <p class="lead text-muted">Soluções inteligentes para um mundo conectado e seguro.</p>
+    </div>
+
+    <!-- Filtros de Categoria -->
+    <div id="product-filters" class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+        <button class="btn btn-primary" data-filter="all">Todos</button>
+        <button class="btn btn-outline-secondary" data-filter="seguranca">Segurança</button>
+        <button class="btn btn-outline-secondary" data-filter="sistemas">Sistemas</button>
+        <button class="btn btn-outline-secondary" data-filter="redes">Redes</button>
+        <button class="btn btn-outline-secondary" data-filter="automacao">Automação</button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- segurança -->  
+       <div class="col product-item" data-category="seguranca">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-success position-absolute top-0 start-0 m-2">Novo</span>
+                <img src="img/Captura de tela de 2025-10-02 16-49-32.png" class="card-img-top p-4" alt="Camera Bullet VHD 1130 B G7 4560033 - INTELBRAS">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Câmeras Inteligentes</h5>
+                    <p class="card-text text-muted small flex-grow-1">Definição de Imagens 720p Cores por mais tempo Protocolo MultiHD – HDCVI, AHD-M, HDTVI, Analógico
+                                                                      Mais proteção, mais durabilidade Case de fácil ajuste</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+            </div>
+        </div>
+        <div class="col product-item" data-category="seguranca">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-success position-absolute top-0 start-0 m-2">Novo</span>
+                <img src="img/Camera De Video WI-FI FULL HD IMX C Com MICRO SD 32GB  - INTELBRAS.png" class="card-img-top p-4" alt="Câmera Inteligente Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Camera De Video WI-FI FULL HD IMX C Com MICRO SD 32GB 4565614 - INTELBRAS</h5>
+                    <p class="card-text text-muted small flex-grow-1">As câmeras de segurança iMX e iMX C foram desenvolvidas para cuidar de sua residência
+                      e de sua família mesmo quando você estiver ausente. Todo o controle necessário estará nas mãos do cliente, em qualquer lugar, através do smartphone,
+                      desde a instalação e gravação até o recebimento de notificações. 2 anos de garantia Interação por voz Visão noturna Armazenamento em nuvem, microSD ou gravadores de vídeo
+                      Aplicativo Mibo Cam</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+            </div>
+        </div>
+        <div class="col product-item" data-category="seguranca">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-success position-absolute top-0 start-0 m-2">Novo</span>
+                <img src="img/Camera De Video Wi-fI IM5 S 4M 4590012 - INTELBRAS.png" class="card-img-top p-4" alt="Câmera Inteligente Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Camera De Video Wi-fI IM5 S 4M 4590012 - INTELBRAS</h5>
+                    <p class="card-text text-muted small flex-grow-1">A câmera de segurança iM5 S 4MP foi desenvolvida para cuidar de sua residência
+                      e sua família mesmo quando você estiver ausente. Com resolução de imagem ainda melhor, para você não perder nenhum detalhe do ambiente
+                      monitorado. Todo o controle necessário estará nas mãos do cliente, em qualquer lugar, através do smartphone, desde a instalação e gravação até o recebimento de notificações.
+                      Resolução 4MP Visão noturna de até 30 metros Microfone interno Proteção contra chuva e poeira IP67</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+      <!-- Sistemas -->
+        <div class="col product-item" data-category="sistemas">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-success position-absolute top-0 start-0 m-2">Novo</span>
+                <img src="img/software-automacao.jpg" class="card-img-top p-4" alt="Câmera Inteligente Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Software para automação industrial</h5>
+                    <p class="card-text text-muted small flex-grow-1">SCADA Coleta dados em tempo real dos CLPs em toda a fábrica e permite que os operadores monitorem e controlem os processos remotamente. É a tela de controle do chão de fábrica.
+                                                                      HMI (Human-Machine Interface): São as telas e painéis que permitem a interação direta do operador com a máquina ou linha específica.
+                                                                      Software MES Função: Fica no nível intermediário, entre o controle de máquinas (SCADA/CLP) e a gestão empresarial (ERP). Softwares que gerenciam a ordem de produção e o controle de estoque em tempo real na linha.
+                                                                      Softwares de Análise de Dados e IIoT (Internet Industrial das Coisas):
+                                                                      Na era da Indústria 4.0, o software deixou de ser apenas uma ferramenta de controle e se tornou um ativo estratégico.</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+        <div class="col product-item" data-category="sistemas">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <img src="img/softwareanalisedados.png" class="card-img-top p-4" alt="Fechadura Digital Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Software para visualização de dados</h5>
+                    <p class="card-text text-muted small flex-grow-1">O Software para Análise de Dados é uma ferramenta digital que permite coletar, limpar, processar, transformar e modelar grandes volumes de dados para descobrir padrões, tendências e informações úteis.
+                                                                      Funções Principais Exploração de Dados: Ajuda a visualizar dados brutos (em gráficos, tabelas e dashboards) para entender rapidamente o que eles contêm.
+                                                                      Modelagem Estatística: Aplica métodos matemáticos para prever resultados futuros ou entender a relação de causa e efeito entre diferentes variáveis.
+                                                                      Tomada de Decisão: Transforma dados complexos em insights claros, suportando decisões de negócios, científicas ou operacionais.
+                                                                      Exemplos de Aplicações Identificar quais produtos estão vendendo mais rápido. Prever a demanda de mercado para o próximo trimestre.
+                                                                      Descobrir gargalos em um processo industrial. Em poucas palavras, é o software que transforma dados brutos em conhecimento acionável.</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+        <div class="col product-item" data-category="sistemas">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Promoção</span>
+                <img src="img/softwaregestão.png" class="card-img-top p-4" alt="Alarme Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Software para gestão</h5>
+                    <p class="card-text text-muted small flex-grow-1">O Software para Gestão é uma ferramenta digital que ajuda as empresas a planejar, organizar, executar e monitorar suas operações diárias e recursos de forma integrada.
+                                                                     Função Principal Seu objetivo é centralizar informações e automatizar processos em diversas áreas, para tomar decisões mais rápidas e informadas. Exemplos Comuns ERP (Enterprise Resource Planning): Integra 
+                                                                     todos os departamentos (o "sistema nervoso central" da empresa). CRM (Customer Relationship Management): Focado na gestão da interação com clientes e no processo de vendas.
+                                                                     Gestão Financeira: Controla fluxo de caixa, contas a pagar/receber e emissão de notas. Em poucas palavras, é o software que transforma a organização e a execução do trabalho em processos digitais controlados.</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+        <!-- Redes -->
+         <div class="col product-item" data-category="redes">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Promoção</span>
+                <img src="img/Switch Intelbras 8 Portas Fast Ethernet SF 800 Q 4760020 - INTELBRAS.png" class="card-img-top p-4" alt="Alarme Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Switch Intelbras 8 Portas Fast Ethernet SF 800 Q 4760020 - INTELBRAS</h5>
+                    <p class="card-text text-muted small flex-grow-1">O Switch SF 800 Q+ possui 8 portas Fast Ethernet 10/100 Mbps para compartilhamento de internet com os dispositivos
+                      conectados, enquanto sua porta LAN 1 possui suporte a PoE passivo, que permite a alimentação do switch através do cabo de rede na presença de um Injetor PoE passivo.
+                      O switch viabiliza a construção de redes de comutação de dados permitindo a integração de computadores, rádios outdoor, roteadores e câmeras IP. Além disso, sua função
+                      QoS permite a priorização do tráfego de dados, voz e vídeo. 8 Portas Fast Ethernet QoS para a priorização do tráfego de voz e vídeo Possibilidade de ser alimentado por
+                      PoE passivo pela LAN1 Design compacto</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>               
+            </div>
+        </div>
+        <div class="col product-item" data-category="redes">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Promoção</span>
+                <img src="img/Roteador Wi-fi 5 Mesh Twibi Force Plug W5-1200F - 4750097 - INTELBRAS.png" class="card-img-top p-4" alt="Alarme Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Roteador Wi-fi 5 Mesh Twibi Force Plug W5-1200F - 4750097 - INTELBRAS</h5>
+                    <p class="card-text text-muted small flex-grow-1">Tecnologia Wi-Fi 5 AC 1200: protocolo 802.11ac com até 300 Mbps em 2,4 GHz e até 867 Mbps em 5 GHz. Ideal para planos de até 100* mega.
+                                                                      Compatível com a tecnologia inMesh: com ela você consegue expandir a área de cobertura de uma rede Wi-Fi formada por roteadores Wi-Force,
+                                                                      ONTs WiFiber e outros produtos compatíveis com inMesh. Expande rede Wi-Fi em até 80*m² e conecta até 30 dispositivos simultaneamente.
+                                                                      Aplicativo Meu Wi-Fi Intelbras: instale e gerencie e remotamente as informações do seu roteador. Porta Ethernet: capaz conectar e trafegar
+                                                                      até 100 mega em dispositivos conectados via cabo. Já no Wi-Fi, pode trafegar velocidades acima de 100 mega graças a tecnologia Wi-Fi 5
+                                                                      Encaixe rotatório exclusivo para melhor adaptação em tomadas e protetores eletrônicos</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+        <div class="col product-item" data-category="redes">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Promoção</span>
+                <img src="img/Modem Óptico PON 1P LAN 1P ONU R1 4780062 - INTELBRAS.png" class="card-img-top p-4" alt="Alarme Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Modem Óptico PON 1P LAN 1P ONU R1 4780062 - INTELBRAS</h5>
+                    <p class="card-text text-muted small flex-grow-1">A ONU R1 faz a interface entre cliente e provedor. Ela recebe o sinal GPON e o converte em Ethernet permitindo o fornecimento de todos os serviços
+                      necessários para provedores de internet, desde serviços residenciais Triple-play, com suporte a multicast para TV, até serviços de banda ultralarga e telefonia IP. A ONU R1 é gerenciada via OLT,
+                      que fica localizada na central do provedor, garantindo um controle simplificado e centralizado da rede sem necessidade de deslocamentos para configuração de seus clientes.
+                      Compatibilidade com Remotize e Customize Operação em modo Bridge ou Router Suporte ao protocolo IPV6 Suporte a VLAN e VLAN Stacking 1 porta Gigabit Ethernet IPTV (IGMP snooping)</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+        <!-- Automação -->
+         <div class="col product-item" data-category="automacao">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Promoção</span>
+                <img src="img/automaçãoresidencial.jpg" class="card-img-top p-4" alt="Alarme Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Automação residencial </h5>
+                    <p class="card-text text-muted small flex-grow-1">Essencialmente, a automação conecta dispositivos e aparelhos da casa (como luzes, termostatos, câmeras, fechaduras e eletrodomésticos) em uma única rede centralizada.
+                                                                      Conforto: Acender as luzes ou ligar o ar-condicionado remotamente antes de chegar em casa. Segurança: Monitorar câmeras, receber alertas de movimento e trancar portas à distância.
+                                                                      Economia de Energia: Programar termostatos ou luzes para desligar automaticamente quando não há ninguém no ambiente.</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+        <div class="col product-item" data-category="automacao">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Promoção</span>
+                <img src="img/automacao-comercials.jpg" class="card-img-top p-4" alt="Alarme Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Automação empresarial</h5>
+                    <p class="card-text text-muted small flex-grow-1">Automação de Processos Robóticos (RPA - Robotic Process Automation):O que faz: Utiliza "robôs de software" (bots) para imitar ações humanas,
+                      Benefícios Chave Produtividade: As tarefas são concluídas mais rapidamente e em maior volume. Redução de Custos: Menos tempo e recursos gastos em tarefas manuais.
+                      Precisão: Minimiza o erro humano, especialmente em tarefas de entrada de dados. Foco Estratégico: Libera os colaboradores para se dedicarem a trabalhos que exigem criatividade, análise e interação humana.
+                      Em resumo, a automação empresarial não se trata de substituir pessoas, mas de usar a tecnologia para otimizar a maneira como o trabalho é feito, tornando a operação mais rápida, barata e confiável.</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+           </div>
+        </div>
+        <div class="col product-item" data-category="automacao">
+            <div class="card h-100 shadow-sm border-0 product-card">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Promoção</span>
+                <img src="img/automaçaoindustrial.jpg" class="card-img-top p-4" alt="Alarme Intelbras">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold">Automação industrial</h5>
+                    <p class="card-text text-muted small flex-grow-1">Sensores e Atuadores: Sensores coletam dados em tempo real (temperatura, pressão, posição). Atuadores (como válvulas e motores) executam as ações necessárias.
+                                                                      Controladores (CLP/PLC): Softwares como o SCADA permitem que operadores humanos monitorem e ajustem o processo remotamente,
+                                                                      visualizando gráficos e dados de toda a fábrica. Robótica: Robôs industriais são usados para tarefas perigosas, repetitivas. Aumento da Produção: As linhas de produção operam mais
+                                                                     rápido e por mais tempo (24 horas por dia). Segurança: Retira os trabalhadores de ambientes perigosos e reduz acidentes. Em suma, a automação industrial transforma linhas de produção manuais
+                                                                     em sistemas inteligentes, rápidos e altamente controlados.</p>
+                    <p class="card-text fs-4 fw-bold text-primary mb-2">R$ Sobre consulta</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+</main>
+<br><br>
+ <!-- Rodapé -->
+  <footer class="bg-dark text-white text-center p-4 fixed-bottom" style="background: linear-gradient(to right, #343a40, #212529); box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); text-shadow: 1px 1px 2px black;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; TODOS OS DIREITOS RESERVADOS 2025 MSX Minds</p>
+            </div>
+            <div class="col-md-6">
+                <a href="mailto:msxminds@gmail.com" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fas fa-envelope me-1"></i> Email</a>
+                <a href="https://wa.me/43996680049" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-whatsapp me-1"></i> WhatsApp</a>
+                <a href="https://www.facebook.com/profile.php?id=61551623679912" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-facebook me-1"></i> Facebook</a>
+                <a href="https://www.instagram.com/msxminds/" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-instagram me-1"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@marcos.silva8692" class="text-white me-3" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-tiktok me-1"></i> TikTok</a>
+                <a href="https://www.youtube.com/@MsxMinds" class="text-white" style="text-shadow: 1px 1px 2px black;"><i class="fab fa-youtube me-1"></i> YouTube</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('#product-filters button');
+        const products = document.querySelectorAll('.product-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove a classe 'btn-primary' de todos e adiciona 'btn-outline-secondary'
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('btn-primary');
+                    btn.classList.add('btn-outline-secondary');
+                });
+                // Adiciona a classe 'btn-primary' apenas ao botão clicado
+                this.classList.add('btn-primary');
+                this.classList.remove('btn-outline-secondary');
+
+                const filter = this.getAttribute('data-filter');
+
+                products.forEach(product => {
+                    if (filter === 'all' || product.getAttribute('data-category').includes(filter)) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
