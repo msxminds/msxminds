@@ -1,0 +1,854 @@
+/* ============================================
+   MSX MINDS - RESPONSIVIDADE COMPLETA
+   ============================================ */
+
+/* --- BOTÃO VOLTAR AO TOPO --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #00f2fe;
+    background: linear-gradient(135deg, #1e2330, #0f1219);
+    color: #00f2fe;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #00f2fe, #0ea5e9);
+    color: #0f1219;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+}
+
+/* --- MENU STICKY --- */
+.menu-sticky {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin-top: 0 !important;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.8),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15),
+        0 0 20px rgba(0, 242, 254, 0.2) !important;
+    animation: menuSlideDown 0.3s ease;
+}
+
+@keyframes menuSlideDown {
+    from { transform: translateX(-50%) translateY(-100%); }
+    to { transform: translateX(-50%) translateY(0); }
+}
+
+/* --- HAMBURGER MENU MOBILE --- */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: linear-gradient(135deg, #333946, #1c2029);
+    border: 2px solid #5a657c;
+    border-radius: 10px;
+    padding: 12px 15px;
+    cursor: pointer;
+    z-index: 1002;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #00f2fe;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 242, 254, 0.5);
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+    background: #9b51e0;
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+    background: #9b51e0;
+}
+
+/* --- CARD GLOW EFFECT --- */
+.card-3d {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(0, 242, 254, 0.08),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card-3d.card-glow-active::before {
+    opacity: 1;
+}
+
+/* --- PARTÍCULAS CANVAS --- */
+.particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- MODAL VIDEO --- */
+#video-modal .modal-container {
+    max-width: 900px;
+}
+
+#video-modal .modal-body {
+    padding: 0;
+    background: #000;
+}
+
+#video-player {
+    width: 100%;
+    display: block;
+    border-radius: 0 0 12px 12px;
+    outline: none;
+}
+
+/* --- EFEITO DE DIGITAÇÃO --- */
+.system-badge {
+    font-family: 'Orbitron', sans-serif;
+    min-width: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00f2fe, #9b51e0);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #9b51e0, #00f2fe);
+}
+
+/* --- SELEÇÃO --- */
+::selection {
+    background: rgba(0, 242, 254, 0.3);
+    color: #ffffff;
+}
+
+/* --- FOCUS --- */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #00f2fe;
+    outline-offset: 2px;
+}
+
+/* --- PAGE-STATS --- */
+.page-stats {
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #0f1219, #151922);
+    border-top: 1px solid rgba(0, 242, 254, 0.1);
+    border-bottom: 1px solid rgba(0, 242, 254, 0.1);
+}
+
+.page-stats-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.page-stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.page-stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.12), rgba(155, 81, 224, 0.12));
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #00f2fe;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
+    transition: all 0.3s ease;
+}
+
+.page-stat-item:hover .page-stat-icon {
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.25), rgba(155, 81, 224, 0.25));
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
+    transform: scale(1.1);
+}
+
+.page-stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00f2fe, #9b51e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+}
+
+.page-stat-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.page-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(180deg, transparent, rgba(0, 242, 254, 0.3), transparent);
+}
+
+
+/* ============================================
+   TABLET (max-width: 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+    /* Grids de cards - 2 colunas */
+    .grid-index,
+    .grid-blog,
+    .grid-portfolio,
+    .grid-eletrica,
+    .grid-ia,
+    .grid-automacao,
+    .grid-servicos {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Pilares */
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Diferenciais */
+    .diffs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Processo */
+    .process-connector {
+        display: none;
+    }
+
+    .process-timeline {
+        gap: 20px !important;
+    }
+}
+
+
+/* ============================================
+   MOBILE GRANDE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    /* --- BODY --- */
+    body {
+        padding-top: 250px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        border-top-width: 2px;
+        border-left-width: 2px;
+        border-right-width: 2px;
+        border-bottom-width: 2px;
+    }
+
+    /* --- BANNER --- */
+    .banner-image {
+        height: 200px !important;
+    }
+
+    .banner-overlay-text h2 {
+        font-size: 0.65rem !important;
+        letter-spacing: 2px !important;
+    }
+
+    .banner-overlay-text p {
+        font-size: 0.45rem !important;
+    }
+
+    /* --- MENU HAMBURGER --- */
+    .hamburger-btn {
+        display: flex !important;
+        margin: 10px auto 0;
+    }
+
+    .menu-container {
+        display: none;
+        margin-top: 10px;
+    }
+
+    .menu-container.menu-open {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(145deg, #1a1f2e, #0d1117);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 0;
+        border-radius: 0;
+        border: none;
+    }
+
+    .menu-container.menu-open .menu-list {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .menu-container.menu-open .menu-list li {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .menu-container.menu-open .menu-item {
+        padding: 18px 20px;
+        font-size: 0.85rem;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .menu-container.menu-open .icon-ia {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
+
+    .menu-sticky {
+        width: calc(100% - 20px);
+    }
+
+    /* --- HERO --- */
+    .hero-cyber,
+    .main-content,
+    .target-sectors {
+        min-height: auto !important;
+        padding: 40px 10px !important;
+    }
+
+    .hero-cyber h1 {
+        font-size: 2.2rem !important;
+        letter-spacing: 3px !important;
+    }
+
+    .hero-cyber h2 {
+        font-size: 0.9rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .hero-description {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero-cyber h1::after {
+        width: 60% !important;
+    }
+
+    .hero-content {
+        border-width: 0 2px !important;
+        padding: 20px 10px !important;
+    }
+
+    .system-badge,
+    .section-title {
+        font-size: 0.55rem !important;
+        padding: 6px 12px !important;
+        min-width: auto !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* --- HERO TECH BADGES --- */
+    .hero-tech-badges {
+        gap: 6px !important;
+    }
+
+    .tech-badge {
+        font-size: 0.5rem !important;
+        padding: 5px 10px !important;
+    }
+
+    /* --- HERO ACTIONS --- */
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.75rem !important;
+        padding: 12px 20px !important;
+    }
+
+    /* --- STATS --- */
+    .stat-number {
+        font-size: 1.4rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.7rem !important;
+    }
+
+    .stat-divider {
+        display: none !important;
+    }
+
+    .stats-container {
+        gap: 25px !important;
+    }
+
+    .stat-icon {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1rem !important;
+    }
+
+    /* --- PAGE STATS --- */
+    .page-stat-number {
+        font-size: 1.5rem !important;
+    }
+
+    .page-stat-divider {
+        display: none !important;
+    }
+
+    .page-stats-container {
+        gap: 25px !important;
+    }
+
+    /* --- GRID CARDS - 1 COLUNA --- */
+    .grid-index,
+    .grid-blog,
+    .grid-portfolio,
+    .grid-eletrica,
+    .grid-ia,
+    .grid-automacao,
+    .grid-servicos {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .card-3d {
+        border-radius: 10px !important;
+    }
+
+    .card-image-wrapper {
+        height: 150px !important;
+    }
+
+    .card-body {
+        padding: 12px !important;
+    }
+
+    .card-body h3 {
+        font-size: 0.8rem !important;
+    }
+
+    .card-intro {
+        font-size: 0.75rem !important;
+    }
+
+    .card-specs li {
+        font-size: 0.7rem !important;
+    }
+
+    .card-buttons {
+        flex-direction: column;
+    }
+
+    .card-buttons .btn-podcast {
+        width: 100%;
+        font-size: 0.65rem !important;
+    }
+
+    /* --- PILARES --- */
+    .pillars-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 400px !important;
+        margin: 0 auto;
+    }
+
+    .pillar-card {
+        padding: 25px 20px !important;
+    }
+
+    .pillar-icon {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.4rem !important;
+    }
+
+    .pillar-card h3 {
+        font-size: 0.8rem !important;
+    }
+
+    .pillar-card p {
+        font-size: 0.75rem !important;
+    }
+
+    .pillar-stat-number {
+        font-size: 1.5rem !important;
+    }
+
+    /* --- PROCESSO --- */
+    .process-timeline {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .process-connector {
+        transform: rotate(90deg) !important;
+        padding: 5px 0 !important;
+    }
+
+    .process-step {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .process-number {
+        font-size: 2rem !important;
+    }
+
+    /* --- SOBRE --- */
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .about-card {
+        padding: 25px 20px !important;
+    }
+
+    .about-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* --- DIFERENCIAIS --- */
+    .diffs-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 400px !important;
+        margin: 0 auto;
+    }
+
+    .diff-card {
+        padding: 25px 18px !important;
+    }
+
+    .diff-icon {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.3rem !important;
+    }
+
+    /* --- CTA --- */
+    .cta-title {
+        font-size: 1.1rem !important;
+    }
+
+    .cta-text {
+        font-size: 0.85rem !important;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.8rem !important;
+        padding: 14px 24px !important;
+    }
+
+    /* --- SETORES --- */
+    .sectors-title {
+        font-size: 0.65rem !important;
+        letter-spacing: 2px !important;
+    }
+
+    .sector-badge {
+        font-size: 0.6rem !important;
+        padding: 10px 16px !important;
+    }
+
+    .sectors-container {
+        gap: 10px !important;
+    }
+
+    /* --- FOOTER --- */
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .footer-section {
+        padding: 18px 15px !important;
+    }
+
+    .footer-logo {
+        font-size: 1.2rem !important;
+    }
+
+    .footer-slogan {
+        font-size: 0.8rem !important;
+    }
+
+    .footer-section h4 {
+        font-size: 0.7rem !important;
+    }
+
+    .footer-whatsapp-btn {
+        max-width: 100% !important;
+        font-size: 0.7rem !important;
+    }
+
+    .footer-bottom p {
+        font-size: 0.6rem !important;
+    }
+
+    /* --- MODAL --- */
+    .modal-container {
+        max-height: 90vh !important;
+        margin: 10px;
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-header h2 {
+        font-size: 0.8rem !important;
+    }
+
+    .modal-body {
+        padding: 15px !important;
+    }
+
+    .modal-body h3 {
+        font-size: 0.9rem !important;
+    }
+
+    .modal-body p {
+        font-size: 0.85rem !important;
+    }
+
+    /* --- TECH MARQUEE --- */
+    .tech-section {
+        padding: 40px 10px !important;
+    }
+
+    .tech-item {
+        min-width: 70px !important;
+        padding: 15px 10px !important;
+    }
+
+    .tech-item i {
+        font-size: 1.4rem !important;
+    }
+
+    .tech-item span {
+        font-size: 0.5rem !important;
+    }
+
+    /* --- BLOG SPECIFICS --- */
+    .grid-blog .card-image-wrapper {
+        height: 130px !important;
+    }
+
+    /* --- PORTFOLIO SPECIFICS --- */
+    .grid-portfolio .card-image-wrapper {
+        height: 140px !important;
+    }
+
+    /* --- LOJA --- */
+    .category-nav {
+        gap: 4px !important;
+    }
+
+    .category-nav a {
+        font-size: 0.6rem !important;
+        padding: 6px 10px !important;
+    }
+
+    /* --- BACK TO TOP --- */
+    .back-to-top {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1rem !important;
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+}
+
+
+/* ============================================
+   MOBILE PEQUENO (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    body {
+        padding-top: 200px !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .banner-image {
+        height: 160px !important;
+    }
+
+    .hero-cyber h1 {
+        font-size: 1.8rem !important;
+        letter-spacing: 2px !important;
+    }
+
+    .hero-cyber h2 {
+        font-size: 0.75rem !important;
+    }
+
+    .hero-description {
+        font-size: 0.8rem !important;
+    }
+
+    .tech-badge {
+        font-size: 0.45rem !important;
+        padding: 4px 8px !important;
+    }
+
+    .stat-number {
+        font-size: 1.2rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.6rem !important;
+    }
+
+    .page-stat-number {
+        font-size: 1.3rem !important;
+    }
+
+    .section-title {
+        font-size: 0.5rem !important;
+        padding: 5px 10px !important;
+    }
+
+    .cta-title {
+        font-size: 1rem !important;
+    }
+
+    .process-number {
+        font-size: 1.6rem !important;
+    }
+
+    .process-step h3 {
+        font-size: 0.85rem !important;
+    }
+
+    .process-step p {
+        font-size: 0.75rem !important;
+    }
+}
+
+
+/* ============================================
+   LANDSCAPE MOBILE (max-height: 500px)
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding-top: 180px !important;
+    }
+
+    .banner-image {
+        height: 150px !important;
+    }
+
+    .hero-cyber {
+        min-height: auto !important;
+        padding: 20px 10px !important;
+    }
+
+    .hero-cyber h1 {
+        font-size: 1.5rem !important;
+    }
+}
