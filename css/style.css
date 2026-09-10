@@ -1,28 +1,79 @@
 /* Configurações Globais e Reset */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Rajdhani', sans-serif;
+    display: block;
+    min-height: 100vh;
+    background: #0a0e16;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
+.banner-top-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    line-height: 0;
+    font-size: 0;
+}
+
+.banner-top-container .banner-3d-frame {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.banner-image {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+    margin: 0;
+    padding: 0;
+}
+
+.hud-scanner {
+    display: none !important;
+}
+
+.banner-overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(145deg, #6b7280, #4b5363, #5a6272);
-    border-top: 3px solid #8a94a5;
-    border-left: 3px solid #7a8395;
-    border-right: 3px solid #3a4150;
-    border-bottom: 3px solid #2d3440;
-    box-shadow: 
-        inset 0 0 60px rgba(0, 242, 254, 0.05),
-        0 0 40px rgba(0, 0, 0, 0.5);
-    padding-top: 550px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Container do Menu (Fundo Degradê Metálico com Relevo) */
@@ -31,10 +82,12 @@ header:not(.banner-top-container) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-container {
-    margin-top: 15px;
+    margin-top: 10px;
     background: linear-gradient(145deg, #2a2f3b, #151922);
     padding: 15px 25px;
     border-radius: 16px;
@@ -182,36 +235,58 @@ header:not(.banner-top-container) {
 
 
 
-/* --- ESTILIZAÇÃO DO BANNER FIXO NO TOPO (DE PONTA A PONTA) --- */
+/* --- ESTILIZAÇÃO DO BANNER NO TOPO (FLUXO NORMAL) --- */
 
-.banner-top-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+body {
+    font-family: 'Rajdhani', sans-serif;
+    display: block;
+    min-height: 100vh;
     background: #0a0e16;
-    border-bottom: 3px solid #05070a;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-    overflow: hidden;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden;
 }
 
-.banner-3d-frame {
+header {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.banner-top-container {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0;
+    font-size: 0;
+    display: block;
+}
+
+.banner-top-container .banner-3d-frame {
     position: relative;
     width: 100%;
     line-height: 0;
+    font-size: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
+    overflow: hidden;
 }
 
 .banner-image {
     display: block;
     width: 100%;
-    height: 464px;
-    object-fit: contain;
-    object-position: center;
-    background: #0a0e16;
+    height: auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: top;
 }
 
-/* Texto do banner sobreposto à imagem */
+.hud-scanner {
+    display: none !important;
+}
+
 .banner-overlay-text {
     position: absolute;
     top: 0;
@@ -223,6 +298,8 @@ header:not(.banner-top-container) {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    margin: 0;
+    padding: 0;
 }
 
 .banner-overlay-text h2 {
@@ -243,7 +320,9 @@ header:not(.banner-top-container) {
 /* --- AJUSTES DE RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 768px) {
     .banner-image {
-        height: 200px;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center top;
     }
     
     .banner-overlay-text h2 {
@@ -256,13 +335,9 @@ header:not(.banner-top-container) {
     }
     
     body {
-        border-top-width: 2px;
-        border-left-width: 2px;
-        border-right-width: 2px;
-        border-bottom-width: 2px;
-        padding-top: 250px;
-        padding-left: 10px;
-        padding-right: 10px;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
 

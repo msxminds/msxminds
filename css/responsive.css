@@ -316,18 +316,15 @@ button:focus-visible {
 @media (max-width: 768px) {
     /* --- BODY --- */
     body {
-        padding-top: 250px !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        border-top-width: 2px;
-        border-left-width: 2px;
-        border-right-width: 2px;
-        border-bottom-width: 2px;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
     }
 
     /* --- BANNER --- */
     .banner-image {
-        height: 200px !important;
+        height: 100vh !important;
+        object-fit: cover !important;
     }
 
     .banner-overlay-text h2 {
@@ -769,13 +766,14 @@ button:focus-visible {
    ============================================ */
 @media (max-width: 480px) {
     body {
-        padding-top: 200px !important;
-        padding-left: 5px !important;
-        padding-right: 5px !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .banner-image {
-        height: 160px !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: center top !important;
     }
 
     .hero-cyber h1 {
@@ -836,11 +834,14 @@ button:focus-visible {
    ============================================ */
 @media (max-height: 500px) and (orientation: landscape) {
     body {
-        padding-top: 180px !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .banner-image {
-        height: 150px !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: center top !important;
     }
 
     .hero-cyber {
