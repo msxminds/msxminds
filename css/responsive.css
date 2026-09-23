@@ -323,8 +323,11 @@ button:focus-visible {
 
     /* --- BANNER --- */
     .banner-image {
-        height: 100vh !important;
-        object-fit: cover !important;
+        max-height: 70vh !important;
+        max-height: 70dvh !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: contain !important;
     }
 
     .banner-overlay-text h2 {
@@ -762,8 +765,8 @@ button:focus-visible {
 
 
 /* ============================================
-   MOBILE PEQUENO (max-width: 480px)
-   ============================================ */
+    MOBILE PEQUENO (max-width: 480px)
+    ============================================ */
 @media (max-width: 480px) {
     body {
         padding: 0 !important;
@@ -771,9 +774,11 @@ button:focus-visible {
     }
 
     .banner-image {
-        height: 100vh !important;
-        object-fit: cover !important;
-        object-position: center top !important;
+        max-height: 60vh !important;
+        max-height: 60dvh !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: contain !important;
     }
 
     .hero-cyber h1 {
@@ -830,8 +835,8 @@ button:focus-visible {
 
 
 /* ============================================
-   LANDSCAPE MOBILE (max-height: 500px)
-   ============================================ */
+    LANDSCAPE MOBILE (max-height: 500px)
+    ============================================ */
 @media (max-height: 500px) and (orientation: landscape) {
     body {
         padding: 0 !important;
@@ -839,9 +844,11 @@ button:focus-visible {
     }
 
     .banner-image {
-        height: 100vh !important;
-        object-fit: cover !important;
-        object-position: center top !important;
+        max-height: 85vh !important;
+        max-height: 85dvh !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: contain !important;
     }
 
     .hero-cyber {
