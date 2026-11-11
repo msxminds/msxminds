@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initBannerHeight();
-    initModals();
+    initModais();
     initVideoPlayer();
     initCounters();
     initPillarCounters();

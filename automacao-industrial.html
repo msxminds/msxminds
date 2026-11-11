@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="ae5vInAY-GPeetrJBOEwNEtuIa41s0gg28EepDCa7aI" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <title>Automação Industrial e Dashboards de Produção | MSX Minds</title>
+    <meta name="description" content="Automação industrial com CLP, SCADA, IoT e dashboards de produção. Reduza paradas, ganhe produtividade e acompanhe indicadores em tempo real. Diagnóstico gratuito no Norte do Paraná." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://msxminds.com.br/automacao-industrial.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MSX Minds" />
+    <meta property="og:title" content="Automação Industrial e Dashboards de Produção | MSX Minds" />
+    <meta property="og:description" content="Sua indústria perdendo produtividade com processos manuais? Automatize, integre e acompanhe a produção em tempo real." />
+    <meta property="og:url" content="https://msxminds.com.br/automacao-industrial.html" />
+    <meta property="og:image"="img/automacaoindustrial.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0a0e16" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+
+    <script src="js/consent.js" defer></script>
+    <script src="js/tracking.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Automação Industrial e Dashboards de Produção",
+      "serviceType": "Automação industrial, CLP, SCADA e IIoT",
+      "description": "Programação de CLP e IHM, sistemas SCADA, dashboards de produção, integração OT-IT, painéis elétricos e manutenção preditiva para indústrias.",
+      "url": "https://msxminds.com.br/automacao-industrial.html",
+      "areaServed": [
+        {"@type": "City", "name": "Londrina"},
+        {"@type": "City", "name": "Cornélio Procópio"},
+        {"@type": "City", "name": "Assaí"},
+        {"@type": "City", "name": "Arapongas"},
+        {"@type": "City", "name": "Apucarana"},
+        {"@type": "City", "name": "Maringá"}
+      ],
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "MSX Minds",
+        "url": "https://msxminds.com.br",
+        "telephone": "+55-43-99668-0049",
+        "email": "msxminds@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Vereador Rafael da Silva, 116",
+          "addressLocality": "Nova América da Colina",
+          "addressRegion": "PR",
+          "addressCountry": "BR"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "É possível automatizar máquinas antigas que já estão na linha de produção?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Em muitos casos fazemos retrofit com sensores, inversores, CLPs e IHMs, preservando a mecânica existente. O diagnóstico avalia o custo-benefício de modernizar versus substituir."}},
+        {"@type": "Question", "name": "A implantação precisa parar a fábrica?", "acceptedAnswer": {"@type": "Answer", "text": "O cronograma é planejado para minimizar a parada. Partes do projeto são desenvolvidas e testadas fora da linha, e a integração final é feita em janelas programadas com a produção."}},
+        {"@type": "Question", "name": "Vocês integram a automação com o ERP da empresa?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Integramos CLPs, SCADA e sistemas de gestão por OPC-UA, MQTT, APIs e banco de dados, para que a produção alimente estoque, custos e indicadores sem digitação manual."}},
+        {"@type": "Question", "name": "Quanto tempo leva um projeto de automação industrial?", "acceptedAnswer": {"@type": "Answer", "text": "Projetos pontuais de CLP podem levar de 2 a 4 semanas. Linhas completas com SCADA e integração OT-IT normalmente levam de 2 a 6 meses, dependendo do escopo e da disponibilidade de parada."}},
+        {"@type": "Question", "name": "O que é OEE e como o dashboard ajuda?", "acceptedAnswer": {"@type": "Answer", "text": "OEE é o indicador de eficiência global do equipamento, que combina disponibilidade, desempenho e qualidade. Com o dashboard, a indústria identifica a causa real das perdas em vez de trabalhar com médias do mês."}}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="css/consent.css" />
+</head>
+<body class="lp-body" data-page-type="landing" data-offer="Diagnóstico de Produtividade Industrial">
+
+    <header class="lp-header">
+        <div class="lp-header-inner">
+            <a class="lp-logo" href="index.html">MSX <span>MINDS</span><small>Tecnologia que gera resultado</small></a>
+            <button class="lp-menu-toggle" id="lpMenuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="lpNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="lp-nav" id="lpNav" aria-label="Soluções">
+                <a href="automacao-rural.html">Agronegócio</a>
+                <a href="automacao-industrial.html">Indústria</a>
+                <a href="sistemas-personalizados.html">Sistemas</a>
+                <a href="analise-de-dados.html">Dados &amp; IA</a>
+                <a href="portfolio.html">Cases</a>
+                <a href="index.html">Site</a>
+            </nav>
+            <a href="#diagnostico" class="lp-header-cta" data-cta="header">Diagnóstico gratuito</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO + FORMULÁRIO -->
+        <section class="lp-hero purple">
+            <div class="lp-hero-inner">
+                <div class="lp-hero-copy">
+                    <div class="lp-breadcrumb"><a href="index.html">Home</a> / Automação industrial</div>
+                    <span class="lp-eyebrow purple"><i class="fa-solid fa-industry"></i> Automação industrial · Indústria 4.0</span>
+                    <h1>Sua indústria está perdendo produtividade com <em>processos manuais e falta de indicadores</em>?</h1>
+                    <p class="lp-sub">
+                        Automatizamos máquinas e linhas, integramos o chão de fábrica à gestão e entregamos dashboards para enxergar paradas, produção e qualidade em tempo real.
+                    </p>
+                    <ul class="lp-checks">
+                        <li><i class="fa-solid fa-circle-check"></i> Menos paradas não planejadas e retrabalho</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Indicadores de produção na tela, não no fim do mês</li>
+                        <li><i class="fa-solid fa-circle-check"></i> CLP, SCADA, IoT e ERP trabalhando juntos</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Decisões com dados confiáveis e rastreáveis</li>
+                    </ul>
+                    <div class="lp-hero-actions">
+                        <a href="#diagnostico" class="lp-btn lp-btn-primary" data-cta="hero">Solicitar diagnóstico industrial</a>
+                        <a href="https://wa.me/5543996680049?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20de%20Automa%C3%A7%C3%A3o%20Industrial%20e%20quero%20falar%20com%20um%20especialista." class="lp-btn lp-btn-whatsapp" target="_blank" rel="noopener" data-cta="hero-whatsapp" data-offer="Automação Industrial">
+                            <i class="fa-brands fa-whatsapp"></i> Falar agora
+                        </a>
+                    </div>
+                    <div class="lp-microproof">
+                        <span><i class="fa-solid fa-shield-halved"></i> Sem compromisso</span>
+                        <span><i class="fa-solid fa-file-shield"></i> Projetos com ART/CREA</span>
+                        <span><i class="fa-solid fa-clock"></i> Resposta em até 24h</span>
+                    </div>
+                </div>
+
+                <aside class="lp-form-card" id="diagnostico" aria-labelledby="formTitle">
+                    <div class="lp-form-head">
+                        <span><i class="fa-solid fa-bolt"></i> Diagnóstico gratuito</span>
+                        <h2 id="formTitle">Descubra onde sua indústria está perdendo eficiência</h2>
+                        <p>Preencha em 1 minuto. Um especialista analisa seu processo e aponta as oportunidades prioritárias.</p>
+                    </div>
+
+                    <form class="lp-form" id="formIndustria" data-offer="Diagnóstico de Produtividade Industrial" data-segment="Indústria" data-prefix="LP-IND" data-whatsapp="5543996680049">
+                        <div class="lp-honeypot" aria-hidden="true">
+                            <label for="ind-website">Não preencher</label>
+                            <input type="text" id="ind-website" name="website" tabindex="-1" autocomplete="off" />
+                        </div>
+
+                        <div class="lp-field">
+                            <label for="ind-name">Seu nome <span class="req">*</span></label>
+                            <input type="text" id="ind-name" name="name" placeholder="Como podemos te chamar?" autocomplete="name" required />
+                            <span class="lp-error">Informe seu nome.</span>
+                        </div>
+
+                        <div class="lp-field">
+                            <label for="ind-phone">WhatsApp com DDD <span class="req">*</span></label>
+                            <input type="tel" id="ind-phone" name="phone" placeholder="(43) 99999-9999" autocomplete="tel" inputmode="tel" data-mask="phone" required />
+                            <span class="lp-error">Informe um WhatsApp válido.</span>
+                        </div>
+
+                        <div class="lp-field">
+                            <label for="ind-city">Cidade da indústria <span class="req">*</span></label>
+                            <input type="text" id="ind-city" name="city" placeholder="Ex.: Londrina - PR" autocomplete="address-level2" required />
+                            <span class="lp-error">Informe a cidade da indústria.</span>
+                        </div>
+
+                        <div class="lp-field">
+                            <label for="ind-challenge">Principal desafio hoje <span class="req">*</span></label>
+                            <select id="ind-challenge" name="challenge" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="Paradas e manutenção não planejada">Paradas e manutenção não planejada</option>
+                                <option value="Falta de indicadores de produção">Falta de indicadores de produção</option>
+                                <option value="Processos manuais e retrabalho">Processos manuais e retrabalho</option>
+                                <option value="Integração entre máquinas e ERP">Integração entre máquinas e ERP</option>
+                                <option value="Painéis elétricos e adequação normativa">Painéis elétricos e adequação normativa</option>
+                                <option value="Outro processo industrial">Outro processo industrial</option>
+                            </select>
+                            <span class="lp-error">Selecione o principal desafio.</span>
+                        </div>
+
+                        <div class="lp-field">
+                            <label for="ind-system">Qual o nível de automação atual?</label>
+                            <select id="ind-system" name="has_system">
+                                <option value="Não possui automação">Não possui automação</option>
+                                <option value="Máquinas isoladas com CLP">Máquinas isoladas com CLP</option>
+                                <option value="Possui SCADA/supervisão">Possui SCADA/supervisão</option>
+                                <option value="Possui MES ou ERP integrado">Possui MES ou ERP integrado</option>
+                                <option value="Não sei informar">Não sei informar</option>
+                            </select>
+                        </div>
+
+                        <div class="lp-field">
+                            <label class="lp-consent">
+                                <input type="checkbox" name="consent" required />
+                                <span>Autorizo o contato da MSX Minds por WhatsApp, telefone ou e-mail sobre esta solicitação. <a href="politica-de-privacidade.html">Política de privacidade</a>.</span>
+                            </label>
+                            <span class="lp-error">Precisamos da sua autorização para contato.</span>
+                        </div>
+
+                        <button type="submit" class="lp-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Quero meu diagnóstico gratuito
+                        </button>
+
+                        <p class="lp-form-alt">Prefere conversar agora? <a href="https://wa.me/5543996680049?text=Ol%C3%A1%21%20Quero%20um%20diagn%C3%B3stico%20industrial." target="_blank" rel="noopener" data-cta="form-whatsapp" data-offer="Automação Industrial">Chamar no WhatsApp</a></p>
+                        <p class="lp-form-note"><i class="fa-solid fa-lock"></i> Seus dados estão seguros. Sem spam.</p>
+                    </form>
+
+                    <div class="lp-form-success" role="status" aria-live="polite">
+                        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+                        <h3>Tudo certo, <span data-lead-name>parceiro</span>!</h3>
+                        <p>Seu código de atendimento é <strong data-lead-ref>MSX</strong>. Abrimos o WhatsApp com a mensagem pronta — basta enviar para falar com um especialista.</p>
+                        <a href="https://wa.me/5543996680049" class="lp-btn lp-btn-whatsapp" target="_blank" rel="noopener" data-cta="success-whatsapp" data-offer="Automação Industrial">
+                            <i class="fa-brands fa-whatsapp"></i> Abrir WhatsApp
+                        </a>
+                        <p class="lp-form-note">Prefere ligar? <a href="tel:+5543996680049">(43) 99668-0049</a></p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- DOR -->
+        <section class="lp-section alt" id="desafios">
+            <div class="lp-container">
+                <div class="lp-section-head">
+                    <span class="lp-kicker"><i class="fa-solid fa-triangle-exclamation"></i> O que trava a produção</span>
+                    <h2>O gargalo raramente está na máquina. Está na <em>falta de visibilidade do processo</em>.</h2>
+                    <p class="lp-section-sub">Sem dados confiáveis, a indústria apaga incêndio todos os dias e perde margem sem perceber.</p>
+                </div>
+                <div class="lp-pain-grid">
+                    <article class="lp-pain-card">
+                        <div class="icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>Paradas sem causa registrada</h3>
+                        <p>A linha para, todos correm, a produção volta — mas ninguém sabe exatamente o que aconteceu nem quanto custou.</p>
+                    </article>
+                    <article class="lp-pain-card">
+                        <div class="icon"><i class="fa-solid fa-clipboard"></i></div>
+                        <h3>Apontamento em papel ou planilha</h3>
+                        <p>Os números chegam atrasados, com erro de digitação e sem ligação com o que realmente aconteceu no chão de fábrica.</p>
+                    </article>
+                    <article class="lp-pain-card">
+                        <div class="icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <h3>Máquinas que não conversam</h3>
+                        <p>Cada equipamento tem seu painel e sua lógica. Integrar produção, qualidade e gestão vira um projeto caro e demorado.</p>
+                    </article>
+                    <article class="lp-pain-card">
+                        <div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Manutenção só depois da falha</h3>
+                        <p>Sem monitoramento, a equipe troca peça no escuro e a parada acontece no pior momento possível.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUÇÕES -->
+        <section class="lp-section" id="solucoes">
+            <div class="lp-container">
+                <div class="lp-section-head">
+                    <span class="lp-kicker"><i class="fa-solid fa-microchip"></i> O que implementamos</span>
+                    <h2>Da programação do CLP ao <em>dashboard da diretoria</em></h2>
+                    <p class="lp-section-sub">Uma equipe só, cobrindo elétrica, automação, TI e dados — sem costurar fornecedores.</p>
+                </div>
+                <div class="lp-solution-grid">
+                    <article class="lp-solution-card">
+                        <div class="icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>Programação de CLP e IHM</h3>
+                        <p>Controle de máquinas e processos com lógica robusta, documentada e preparada para evoluir.</p>
+                        <ul>
+                            <li>Siemens, Rockwell, Schneider, ABB</li>
+                            <li>Retrofit de máquinas existentes</li>
+                            <li>Intertravamento e segurança</li>
+                        </ul>
+                    </article>
+                    <article class="lp-solution-card">
+                        <div class="icon"><i class="fa-solid fa-desktop"></i></div>
+                        <h3>SCADA e supervisão</h3>
+                        <p>Visualização completa da linha, alarmes e histórico de eventos para agir antes da perda.</p>
+                        <ul>
+                            <li>Elipse E3, WinCC, FactoryTalk</li>
+                            <li>Alarmes e rastreabilidade</li>
+                            <li>Telas por área e por turno</li>
+                        </ul>
+                    </article>
+                    <article class="lp-solution-card">
+                        <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Dashboards de produção</h3>
+                        <p>OEE, disponibilidade, desempenho, qualidade e paradas por motivo, em tempo real.</p>
+                        <ul>
+                            <li>Indicadores por máquina e turno</li>
+                            <li>Acesso no celular e na TV da fábrica</li>
+                            <li>Relatórios automáticos</li>
+                        </ul>
+                    </article>
+                    <article class="lp-solution-card">
+                        <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>IIoT e integração OT-IT</h3>
+                        <p>Máquinas conectadas ao sistema de gestão por protocolos industriais abertos.</p>
+                        <ul>
+                            <li>OPC-UA, MQTT, Modbus</li>
+                            <li>Integração com ERP e banco de dados</li>
+                            <li>Coleta sem digitação manual</li>
+                        </ul>
+                    </article>
+                    <article class="lp-solution-card">
+                        <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Painéis elétricos e CCM</h3>
+                        <p>Projeto, montagem e adequação de painéis com documentação e testes.</p>
+                        <ul>
+                            <li>CCM, QGBT e painéis de CLP</li>
+                            <li>NBR IEC 61439 e NR-10</li>
+                            <li>FAT e comissionamento</li>
+                        </ul>
+                    </article>
+                    <article class="lp-solution-card">
+                        <div class="icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>IA e manutenção preditiva</h3>
+                        <p>Modelos que identificam padrões de falha e ajudam a planejar a manutenção antes da parada.</p>
+                        <ul>
+                            <li>Análise de vibração e corrente</li>
+                            <li>Alertas de anomalia</li>
+                            <li>Visão computacional para qualidade</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGEM + RESULTADOS -->
+        <section class="lp-section alt" id="resultados">
+            <div class="lp-container">
+                <div class="lp-media-grid">
+                    <div class="lp-text">
+                        <span class="lp-kicker"><i class="fa-solid fa-arrow-trend-up"></i> Ganhos esperados</span>
+                        <h3>Produção visível, paradas explicadas e decisões mais rápidas</h3>
+                        <p>Quando a indústria passa a medir o que acontece na linha, os gargalos aparecem com clareza — e cada melhoria pode ser comprovada por indicador.</p>
+                        <ul class="lp-checks">
+                            <li><i class="fa-solid fa-circle-check"></i> Histórico de paradas por motivo, máquina e turno</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Indicadores confiáveis para gestão e auditoria</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Menos tempo gasto com apontamento manual</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Base pronta para manutenção preditiva e IA</li>
+                        </ul>
+                    </div>
+                    <figure class="lp-media">
+                        <picture><source srcset="img/scadaindustria.webp" type="image/webp"><img<img alt="Supervisório SCADA industrial com indicadores de produção em tempo real" loading="lazy" /> src="img/scadaindustria.webp"/></picture>
+                        <figcaption class="lp-media-caption">
+                            <strong>Indústria conectada</strong>
+                            CLP, SCADA e dashboards integrados em uma única visão da operação.
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="lp-results">
+                    <div class="lp-result"><strong>-40%</strong><span>de redução em paradas não planejadas</span></div>
+                    <div class="lp-result"><strong>+35%</strong><span>de produtividade com processos automatizados</span></div>
+                    <div class="lp-result"><strong>24/7</strong><span>monitoramento da linha e dos indicadores</span></div>
+                    <div class="lp-result"><strong>-50%</strong><span>de tempo com apontamento manual de produção</span></div>
+                </div>
+                <p class="lp-disclaimer">Faixas de referência observadas em projetos de automação. Os resultados variam conforme o processo, a infraestrutura e o escopo implantado.</p>
+            </div>
+        </section>
+
+        <!-- ANTES / DEPOIS -->
+        <section class="lp-section" id="antes-depois">
+            <div class="lp-container">
+                <div class="lp-section-head">
+                    <span class="lp-kicker"><i class="fa-solid fa-arrows-rotate"></i> Antes e depois</span>
+                    <h2>Como a gestão da fábrica muda</h2>
+                </div>
+                <div class="lp-compare">
+                    <div class="lp-compare-col before">
+                        <h3><i class="fa-solid fa-xmark"></i> Hoje, sem integração</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-xmark"></i> Paradas anotadas no papel e esquecidas</li>
+                            <li><i class="fa-solid fa-xmark"></i> Produção do dia descoberta no fechamento</li>
+                            <li><i class="fa-solid fa-xmark"></i> Cada máquina com um painel diferente</li>
+                            <li><i class="fa-solid fa-xmark"></i> Manutenção corretiva e urgente</li>
+                            <li><i class="fa-solid fa-xmark"></i> Decisão baseada em percepção</li>
+                        </ul>
+                    </div>
+                    <div class="lp-compare-col after">
+                        <h3><i class="fa-solid fa-check"></i> Com a MSX Minds</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Parada registrada com causa, tempo e responsável</li>
+                            <li><i class="fa-solid fa-check"></i> Produção e OEE em tempo real</li>
+                            <li><i class="fa-solid fa-check"></i> Dados padronizados e integrados à gestão</li>
+                            <li><i class="fa-solid fa-check"></i> Manutenção planejada com alertas</li>
+                            <li><i class="fa-solid fa-check"></i> Decisão baseada em indicador</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+        <section class="lp-section alt" id="processo">
+            <div class="lp-container">
+                <div class="lp-section-head">
+                    <span class="lp-kicker"><i class="fa-solid fa-diagram-project"></i> Como funciona</span>
+                    <h2>Metodologia de implantação <em>sem improviso</em></h2>
+                </div>
+                <div class="lp-process">
+                    <div class="lp-step">
+                        <span class="lp-step-number">01</span>
+                        <h3>Diagnóstico</h3>
+                        <p>Mapeamos o processo, as máquinas, os indicadores e os pontos de perda da operação.</p>
+                    </div>
+                    <div class="lp-step">
+                        <span class="lp-step-number">02</span>
+                        <h3>Projeto e priorização</h3>
+                        <p>Definimos o escopo, a arquitetura e as quick wins com melhor retorno sobre o investimento.</p>
+                    </div>
+                    <div class="lp-step">
+                        <span class="lp-step-number">03</span>
+                        <h3>Implantação</h3>
+                        <p>Programação, montagem, testes e comissionamento com janelas planejadas de parada.</p>
+                    </div>
+                    <div class="lp-step">
+                        <span class="lp-step-number">04</span>
+                        <h3>Evolução</h3>
+                        <p>Treinamento, suporte e ampliação da automação conforme os resultados aparecem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFERTA -->
+        <section class="lp-section" id="oferta">
+            <div class="lp-container">
+                <div class="lp-offer">
+                    <div>
+                        <span class="lp-offer-badge"><i class="fa-solid fa-gift"></i> Oferta de entrada</span>
+                        <h2>Diagnóstico de produtividade industrial</h2>
+                        <p>Uma avaliação inicial para identificar onde a indústria pode ganhar produtividade, reduzir paradas e melhorar o controle da operação.</p>
+                        <ul class="lp-offer-list">
+                            <li><i class="fa-solid fa-check"></i> Mapeamento do processo e dos gargalos</li>
+                            <li><i class="fa-solid fa-check"></i> Avaliação do nível de automação e integração</li>
+                            <li><i class="fa-solid fa-check"></i> Oportunidades priorizadas por retorno</li>
+                            <li><i class="fa-solid fa-check"></i> Roadmap de implantação, sem compromisso</li>
+                        </ul>
+                    </div>
+                    <div class="lp-offer-side">
+                        <span class="price">Gratuito<small>diagnóstico inicial de 45 a 60 minutos</small></span>
+                        <p>Presencial na região ou remoto. Sem custo e sem obrigação de contratar.</p>
+                        <a href="#diagnostico" class="lp-btn lp-btn-primary" data-cta="offer">Agendar meu diagnóstico</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGIÃO -->
+        <section class="lp-section alt" id="regiao">
+            <div class="lp-container">
+                <div class="lp-section-head">
+                    <span class="lp-kicker"><i class="fa-solid fa-location-dot"></i> Presença regional</span>
+                    <h2>Automação industrial no <em>Norte do Paraná</em></h2>
+                    <p class="lp-section-sub">Atendemos indústrias da região com projeto, implantação e suporte técnico.</p>
+                </div>
+                <div class="lp-cities" aria-label="Cidades atendidas">
+                    <span class="lp-city">Londrina</span>
+                    <span class="lp-city">Cornélio Procópio</span>
+                    <span class="lp-city">Assaí</span>
+                    <span class="lp-city">Nova América da Colina</span>
+                    <span class="lp-city">Bandeirantes</span>
+                    <span class="lp-city">Santa Mariana</span>
+                    <span class="lp-city">Ibiporã</span>
+                    <span class="lp-city">Cambé</span>
+                    <span class="lp-city">Rolândia</span>
+                    <span class="lp-city">Arapongas</span>
+                    <span class="lp-city">Apucarana</span>
+                    <span class="lp-city">Maringá</span>
+                    <span class="lp-city">Uraí</span>
+                    <span class="lp-city">Sertaneja</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="lp-section" id="faq">
+            <div class="lp-container">
+                <div class="lp-section-head">
+                    <span class="lp-kicker"><i class="fa-solid fa-circle-question"></i> Perguntas frequentes</span>
+                    <h2>Dúvidas sobre automação industrial</h2>
+                </div>
+                <div class="lp-faq">
+                    <details class="lp-faq-item" open>
+                        <summary>É possível automatizar máquinas antigas que já estão na linha?</summary>
+                        <div class="lp-faq-answer">Sim. Em muitos casos fazemos retrofit com sensores, inversores, CLPs e IHMs, preservando a mecânica existente. O diagnóstico avalia o custo-benefício de modernizar versus substituir.</div>
+                    </details>
+                    <details class="lp-faq-item">
+                        <summary>A implantação precisa parar a fábrica?</summary>
+                        <div class="lp-faq-answer">O cronograma é planejado para minimizar a parada. Partes do projeto são desenvolvidas e testadas fora da linha, e a integração final é feita em janelas programadas com a produção.</div>
+                    </details>
+                    <details class="lp-faq-item">
+                        <summary>Vocês integram a automação com o ERP da empresa?</summary>
+                        <div class="lp-faq-answer">Sim. Integramos CLPs, SCADA e sistemas de gestão por OPC-UA, MQTT, APIs e banco de dados, para que a produção alimente estoque, custos e indicadores sem digitação manual.</div>
+                    </details>
+                    <details class="lp-faq-item">
+                        <summary>Quanto tempo leva um projeto de automação industrial?</summary>
+                        <div class="lp-faq-answer">Projetos pontuais de CLP podem levar de 2 a 4 semanas. Linhas completas com SCADA e integração OT-IT normalmente levam de 2 a 6 meses, dependendo do escopo e da disponibilidade de parada.</div>
+                    </details>
+                    <details class="lp-faq-item">
+                        <summary>O que é OEE e como o dashboard ajuda?</summary>
+                        <div class="lp-faq-answer">OEE é o indicador de eficiência global do equipamento, que combina disponibilidade, desempenho e qualidade. Com o dashboard, a indústria identifica a causa real das perdas em vez de trabalhar com médias do mês.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTEÚDO RELACIONADO -->
+        <section class="lp-section alt" id="conteudos">
+            <div class="lp-container">
+                <div class="lp-section-head">
+                    <span class="lp-kicker"><i class="fa-solid fa-book-open"></i> Conteúdo relacionado</span>
+                    <h2>Antes de decidir, <em>vale ler isto</em></h2>
+                    <p class="lp-section-sub">Um artigo prático, sem promessa mágica, para chegar ao diagnóstico com as perguntas certas.</p>
+                </div>
+                <a class="lp-related-card" href="artigos/reduzir-paradas-industria.html?utm_source=lp&utm_medium=organic&utm_campaign=lp-industria&utm_content=conteudo-relacionado">
+                    <span class="lp-related-kicker"><i class="fa-solid fa-industry"></i> Artigo · 10 min de leitura</span>
+                    <h3>Como reduzir paradas não planejadas na indústria</h3>
+                    <p>Um roteiro para medir disponibilidade, achar as causas reais e priorizar automação com base em dados.</p>
+                    <span class="lp-related-link">Ler artigo <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="lp-final-cta">
+            <div class="lp-container">
+                <h2>Pare de descobrir os problemas da produção no fechamento do mês.</h2>
+                <p>Agende um diagnóstico gratuito e veja, com clareza, onde sua indústria pode produzir mais com o mesmo parque industrial.</p>
+                <div class="lp-hero-actions">
+                    <a href="#diagnostico" class="lp-btn lp-btn-primary" data-cta="final">Solicitar diagnóstico gratuito</a>
+                    <a href="https://wa.me/5543996680049?text=Ol%C3%A1%21%20Quero%20falar%20sobre%20automa%C3%A7%C3%A3o%20industrial." class="lp-btn lp-btn-whatsapp" target="_blank" rel="noopener" data-cta="final-whatsapp" data-offer="Automação Industrial">
+                        <i class="fa-brands fa-whatsapp"></i> Falar com especialista
+                    </a>
+                </div>
+                <div class="lp-microproof" style="justify-content:center;">
+                    <span><i class="fa-solid fa-shield-halved"></i> Sem compromisso</span>
+                    <span><i class="fa-solid fa-file-shield"></i> ART &amp; CREA</span>
+                    <span><i class="fa-solid fa-clock"></i> Resposta em até 24h</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-futurista">
+        <div class="footer-container">
+            <div class="footer-section brand-box">
+                <h3 class="footer-logo">MSX <span>MINDS</span></h3>
+                <p class="footer-slogan">"Tecnologia inteligente para transformar dados em resultados."</p>
+                <div class="panel-status">
+                    <span class="status-indicator"></span> SYSTEM CORE: ONLINE
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4><i class="fa-solid fa-cubes"></i> Soluções</h4>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-tractor icon-amber"></i><a href="automacao-rural.html">Automação rural</a></li>
+                    <li><i class="fa-solid fa-industry icon-amber"></i><a href="automacao-industrial.html">Automação industrial</a></li>
+                    <li><i class="fa-solid fa-code icon-amber"></i><a href="sistemas-personalizados.html">Sistemas personalizados</a></li>
+                    <li><i class="fa-solid fa-chart-line icon-amber"></i><a href="analise-de-dados.html">Dados &amp; IA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-box">
+                <h4><i class="fa-solid fa-satellite-dish"></i> Canais de Contato</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-envelope icon-amber"></i>
+                        <div><span class="label">E-mail:</span> <a href="mailto:msxminds@gmail.com">msxminds@gmail.com</a></div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-mobile-screen-button icon-amber"></i>
+                        <div><span class="label">WhatsApp:</span> <a href="https://wa.me/5543996680049" target="_blank" rel="noopener">(43) 99668-0049</a></div>
+                    </li>
+                </ul>
+                <a href="https://wa.me/5543996680049?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es." class="footer-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i> Iniciar conversa
+                </a>
+            </div>
+
+            <div class="footer-section location-box">
+                <h4><i class="fa-solid fa-location-dot"></i> Base Operacional</h4>
+                <p class="address-text">
+                    Rua Vereador Rafael da Silva, N° 116<br />
+                    Nova América da Colina - Paraná
+                </p>
+                <span class="geo-coords">LOC: 23.3283° S, 50.7242° W</span>
+            </div>
+
+            <div class="footer-section social-box">
+                <h4><i class="fa-solid fa-share-nodes"></i> Matriz Social</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61551623679912" class="social-btn facebook" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/marcos-silva-791b902b8/" class="social-btn linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/msx.minds/" class="social-btn instagram" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@MsxMinds" class="social-btn youtube" aria-label="YouTube" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span class="highlight">MSX MINDS</span> - Todos os direitos reservados. Tecnologia inteligente para transformar dados em resultados. · <a href="politica-de-privacidade.html">Política de privacidade</a> · <a href="termos-de-uso.html">Termos de uso</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5543996680049?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20de%20Automa%C3%A7%C3%A3o%20Industrial." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-cta="float" data-offer="Automação Industrial">
+        <div class="whatsapp-pulse"></div>
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="lp-sticky-mobile">
+        <a href="#diagnostico" class="lp-btn lp-btn-primary" data-cta="sticky">Diagnóstico grátis</a>
+        <a href="https://wa.me/5543996680049?text=Ol%C3%A1%21%20Quero%20falar%20sobre%20automa%C3%A7%C3%A3o%20industrial." class="lp-btn lp-btn-whatsapp" target="_blank" rel="noopener" data-cta="sticky-whatsapp" data-offer="Automação Industrial"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <script src="js/leads.js" defer></script>
+    <script src="js/landing.js" defer></script>
+</body>
+</html>

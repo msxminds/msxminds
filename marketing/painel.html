@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="ae5vInAY-GPeetrJBOEwNEtuIa41s0gg28EepDCa7aI" />
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+    <title>Painel de Marketing e CRM — MSX Minds</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#080c14" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/marketing.css" />
+    <link rel="stylesheet" href="../css/consent.css" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Painel de Marketing & CRM",
+  "url": "https://msxminds.com.br/marketing/painel.html",
+  "inLanguage": "pt-BR",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "MSX Minds",
+    "url": "https://msxminds.com.br"
+  }
+}
+    </script>
+</head>
+<body class="mk-body" data-page-type="marketing-panel">
+
+<header class="mk-header">
+    <div class="mk-header-inner">
+        <a class="mk-logo" href="../index.html">MSX <span>MINDS</span></a>
+        <span class="mk-header-tag">Marketing BI</span>
+        <nav class="mk-header-nav" aria-label="Navegação">
+            <a href="plano.html">Plano 4.0</a>
+            <a href="painel.html" class="active">Painel &amp; CRM</a>
+            <a href="../index.html" class="mk-back"><i class="fa-solid fa-arrow-left"></i> Voltar ao site</a>
+        </nav>
+    </div>
+</header>
+
+<div class="mk-wrap">
+    <section class="mk-hero">
+        <span class="mk-kicker"><i class="fa-solid fa-chart-line"></i> Inteligência de marketing</span>
+        <h1>Painel de Marketing <em>&amp; CRM</em></h1>
+        <p>Leads das landing pages, funil comercial, custo por oportunidade, contratos e retorno sobre o investimento. Os dados ficam salvos neste navegador; o envio para um CRM central é feito pelo webhook em <code>js/tracking.js</code>.</p>
+        <div class="mk-meta">
+            <span class="mk-chip"><strong>Fonte:</strong> formulários do site</span>
+            <span class="mk-chip"><strong>Armazenamento:</strong> local (este navegador)</span>
+            <span class="mk-chip"><strong>Etapas:</strong> 01 novo → 07 pós-venda</span>
+        </div>
+    </section>
+
+    <div class="mk-layout">
+        <aside class="mk-toc">
+            <h2>Painel</h2>
+            <a href="#investimento">Investimento</a>
+            <a href="#indicadores">Indicadores</a>
+            <a href="#funil-painel">Funil comercial</a>
+            <a href="#origem">Origem dos leads</a>
+            <a href="#novo-lead">Cadastrar lead</a>
+            <a href="#crm">Base de leads</a>
+            <a href="#configuracao">Configuração técnica</a>
+            <a href="plano.html"><i class="fa-solid fa-arrow-left"></i> Voltar ao plano</a>
+        </aside>
+
+        <main class="mk-main">
+            <section class="mk-section" id="investimento">
+                <h2><i class="fa-solid fa-coins"></i> Investimento e premissas</h2>
+                <p class="mk-section-sub">Ajuste os valores para calcular custo por lead, custo por cliente e ROI. As alterações são salvas automaticamente.</p>
+
+                <div class="mk-config">
+                    <div class="mk-field">
+                        <label for="cfgBudget">Mídia mensal (R$)</label>
+                        <input type="number" id="cfgBudget" min="0" step="50" value="1800" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="cfgGoogle">Google Ads (R$)</label>
+                        <input type="number" id="cfgGoogle" min="0" step="50" value="900" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="cfgMeta">Meta Ads (R$)</label>
+                        <input type="number" id="cfgMeta" min="0" step="50" value="900" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="cfgTicket">Ticket médio (R$)</label>
+                        <input type="number" id="cfgTicket" min="0" step="100" value="8000" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="cfgMargin">Margem (%)</label>
+                        <input type="number" id="cfgMargin" min="0" max="100" step="1" value="40" />
+                    </div>
+                </div>
+
+                <div class="mk-actions">
+                    <button type="button" class="mk-btn green" id="saveConfig"><i class="fa-solid fa-floppy-disk"></i> Salvar premissas</button>
+                    <span class="mk-chip" id="configStatus">Premissas padrão</span>
+                </div>
+
+                <div class="mk-panel-grid">
+                    <div class="mk-kpi"><span class="label">Investimento</span><span class="value" id="kpiBudget">R$ 0</span><span class="hint">mídia mensal</span></div>
+                    <div class="mk-kpi purple"><span class="label">Ticket médio</span><span class="value" id="kpiTicket">R$ 0</span><span class="hint">por contrato</span></div>
+                    <div class="mk-kpi yellow"><span class="label">Margem</span><span class="value" id="kpiMargin">0%</span><span class="hint">margem estimada</span></div>
+                </div>
+            </section>
+
+            <section class="mk-section" id="indicadores">
+                <h2><i class="fa-solid fa-gauge-high"></i> Indicadores do funil</h2>
+                <p class="mk-section-sub">Os números são calculados a partir dos leads registrados por esta página e pelos formulários do site neste navegador.</p>
+
+                <div class="mk-panel-grid">
+                    <div class="mk-kpi"><span class="label">Leads</span><span class="value" id="kpiLeads">0</span><span class="hint">total recebido</span></div>
+                    <div class="mk-kpi"><span class="label">Qualificados</span><span class="value" id="kpiQualified">0</span><span class="hint">etapa 02 ou além</span></div>
+                    <div class="mk-kpi yellow"><span class="label">Reuniões</span><span class="value" id="kpiMeetings">0</span><span class="hint">diagnósticos agendados</span></div>
+                    <div class="mk-kpi yellow"><span class="label">Propostas</span><span class="value" id="kpiProposals">0</span><span class="hint">enviadas</span></div>
+                    <div class="mk-kpi green"><span class="label">Contratos</span><span class="value" id="kpiClosed">0</span><span class="hint">fechados + pós-venda</span></div>
+                    <div class="mk-kpi"><span class="label">Conversão</span><span class="value" id="kpiConv">0%</span><span class="hint">leads → contratos</span></div>
+                    <div class="mk-kpi purple"><span class="label">Custo por lead</span><span class="value" id="kpiCpl">—</span><span class="hint">mídia ÷ leads</span></div>
+                    <div class="mk-kpi purple"><span class="label">Custo por cliente</span><span class="value" id="kpiCpa">—</span><span class="hint">mídia ÷ contratos</span></div>
+                    <div class="mk-kpi green"><span class="label">Receita estimada</span><span class="value" id="kpiRevenue">R$ 0</span><span class="hint">contratos × ticket</span></div>
+                    <div class="mk-kpi green"><span class="label">ROI de mídia</span><span class="value" id="kpiRoi">—</span><span class="hint">(margem − mídia) ÷ mídia</span></div>
+                </div>
+            </section>
+
+            <section class="mk-section" id="funil-painel">
+                <h2><i class="fa-solid fa-filter"></i> Funil comercial</h2>
+                <p class="mk-section-sub">Distribuição dos leads por etiqueta. Use o mesmo nome de etiqueta no WhatsApp Business.</p>
+                <div class="mk-funnel" id="funnel"></div>
+            </section>
+
+            <section class="mk-section" id="origem">
+                <h2><i class="fa-solid fa-code-branch"></i> Origem dos leads</h2>
+                <p class="mk-section-sub">Atribuição por UTM, página de entrada e campanha. Sem UTM, a origem aparece como direto ou referral.</p>
+                <div class="mk-table-wrap">
+                    <table class="mk-table" id="sourceTable">
+                        <thead>
+                            <tr><th>Origem</th><th>Campanha</th><th>Leads</th><th>Contratos</th><th>Conversão</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="mk-section" id="novo-lead">
+                <h2><i class="fa-solid fa-user-plus"></i> Cadastrar lead manualmente</h2>
+                <p class="mk-section-sub">Use para registrar contatos da prospecção ativa, indicações e reuniões feitas fora do site.</p>
+
+                <form class="mk-config" id="manualForm" style="align-items:end;">
+                    <div class="mk-field">
+                        <label for="mName">Nome *</label>
+                        <input type="text" id="mName" name="name" required placeholder="Contato" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="mPhone">WhatsApp *</label>
+                        <input type="tel" id="mPhone" name="phone" required placeholder="(43) 99999-9999" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="mCity">Cidade</label>
+                        <input type="text" id="mCity" name="city" placeholder="Cidade - PR" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="mOffer">Oferta</label>
+                        <select id="mOffer" name="offer">
+                            <option value="Automação Rural">Automação rural</option>
+                            <option value="Automação Industrial">Automação industrial</option>
+                            <option value="Sistemas Personalizados">Sistemas personalizados</option>
+                            <option value="Dados e IA">Dados e IA</option>
+                            <option value="Projetos Elétricos">Projetos elétricos</option>
+                            <option value="Prospecção ativa">Prospecção ativa</option>
+                        </select>
+                    </div>
+                    <div class="mk-field">
+                        <label for="mSegment">Segmento</label>
+                        <select id="mSegment" name="segment">
+                            <option value="Agronegócio">Agronegócio</option>
+                            <option value="Indústria">Indústria</option>
+                            <option value="Empresas">Empresas</option>
+                        </select>
+                    </div>
+                    <div class="mk-field">
+                        <label for="mSource">Origem</label>
+                        <select id="mSource" name="source">
+                            <option value="prospeccao">Prospecção ativa</option>
+                            <option value="indicacao">Indicação</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="google">Google</option>
+                            <option value="meta">Meta</option>
+                            <option value="organico">Orgânico</option>
+                        </select>
+                    </div>
+                    <div class="mk-field">
+                        <label for="mStatus">Etapa</label>
+                        <select id="mStatus" name="status">
+                            <option value="novo">01 — Novo contato</option>
+                            <option value="qualificado">02 — Lead qualificado</option>
+                            <option value="diagnostico">03 — Diagnóstico</option>
+                            <option value="proposta">04 — Proposta enviada</option>
+                            <option value="negociacao">05 — Negociação</option>
+                            <option value="fechado">06 — Cliente fechado</option>
+                            <option value="posvenda">07 — Pós-venda</option>
+                        </select>
+                    </div>
+                    <div class="mk-field">
+                        <label>&nbsp;</label>
+                        <button type="submit" class="mk-btn green"><i class="fa-solid fa-plus"></i> Adicionar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="mk-section" id="crm">
+                <h2><i class="fa-solid fa-address-book"></i> Base de leads</h2>
+                <p class="mk-section-sub">Atualize a etapa, registre o valor estimado e abra a conversa no WhatsApp.</p>
+
+                <div class="mk-config" style="align-items:end;">
+                    <div class="mk-field">
+                        <label for="leadSearch">Buscar</label>
+                        <input type="search" id="leadSearch" placeholder="Nome, cidade ou telefone" />
+                    </div>
+                    <div class="mk-field">
+                        <label for="leadStatus">Etapa</label>
+                        <select id="leadStatus">
+                            <option value="">Todas</option>
+                            <option value="novo">01 — Novo contato</option>
+                            <option value="qualificado">02 — Lead qualificado</option>
+                            <option value="diagnostico">03 — Diagnóstico</option>
+                            <option value="proposta">04 — Proposta enviada</option>
+                            <option value="negociacao">05 — Negociação</option>
+                            <option value="fechado">06 — Cliente fechado</option>
+                            <option value="posvenda">07 — Pós-venda</option>
+                            <option value="perdido">Perdido</option>
+                        </select>
+                    </div>
+                    <div class="mk-field">
+                        <label for="leadOffer">Oferta</label>
+                        <select id="leadOffer">
+                            <option value="">Todas</option>
+                            <option value="Automação Rural">Automação rural</option>
+                            <option value="Automação Industrial">Automação industrial</option>
+                            <option value="Sistemas Personalizados">Sistemas personalizados</option>
+                            <option value="Dados e IA">Dados e IA</option>
+                            <option value="Projetos Elétricos">Projetos elétricos</option>
+                            <option value="Prospecção ativa">Prospecção ativa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mk-actions">
+                    <button type="button" class="mk-btn" id="exportCsv"><i class="fa-solid fa-file-csv"></i> Exportar CSV</button>
+                    <button type="button" class="mk-btn green" id="seedDemo"><i class="fa-solid fa-flask"></i> Inserir dados de exemplo</button>
+                    <button type="button" class="mk-btn red" id="clearLeads"><i class="fa-solid fa-trash-can"></i> Limpar base</button>
+                    <span class="mk-chip" id="leadCount">0 leads</span>
+                </div>
+
+                <div class="mk-table-wrap">
+                    <table class="mk-table mk-lead-table">
+                        <thead>
+                            <tr>
+                                <th>Lead</th>
+                                <th>Contato</th>
+                                <th>Oferta / cidade</th>
+                                <th>Origem</th>
+                                <th>Etapa</th>
+                                <th>Valor (R$)</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leadTableBody"></tbody>
+                    </table>
+                </div>
+                <div class="mk-empty" id="emptyState" style="margin-top:14px;">
+                    Nenhum lead registrado ainda. Envie um formulário nas landing pages para testar a captura ou use "Inserir dados de exemplo".
+                </div>
+            </section>
+
+            <section class="mk-section" id="configuracao">
+                <h2><i class="fa-solid fa-screwdriver-wrench"></i> Configuração técnica</h2>
+                <p class="mk-section-sub">Três passos para a mensuração funcionar de ponta a ponta.</p>
+
+                <div class="mk-card">
+                    <h3>1. IDs de mensuração</h3>
+                    <p>Abra <code>js/tracking.js</code> e preencha:</p>
+                    <ul class="mk-list">
+                        <li><i class="fa-solid fa-circle-check"></i> <code>ga4</code>: ID do Google Analytics 4 (<code>G-XXXXXXXXXX</code>)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <code>metaPixel</code>: ID do Pixel da Meta</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <code>googleAds</code> e <code>googleAdsLeadLabel</code>: conversão do Google Ads</li>
+                    </ul>
+                    <p>Enquanto estiverem vazios, nenhum script externo é carregado e o site continua funcionando normalmente.</p>
+                </div>
+
+                <div class="mk-card">
+                    <h3>2. Webhook de leads</h3>
+                    <p>Preencha <code>leadWebhook</code> com a URL de um Apps Script, n8n ou Make. A cada formulário enviado, o lead completo (incluindo UTMs) é postado para centralizar a base em uma planilha ou CRM.</p>
+                </div>
+
+                <div class="mk-card">
+                    <h3>3. Eventos acompanhados</h3>
+                    <p><span class="mk-badge">page_view</span> <span class="mk-badge">view_offer</span> <span class="mk-badge">form_start</span> <span class="mk-badge green">generate_lead</span> <span class="mk-badge green">whatsapp_click</span> <span class="mk-badge purple">cta_click</span> <span class="mk-badge yellow">scroll_depth</span></p>
+                    <p style="margin-top:10px;">Todos vão para o <code>dataLayer</code>, GA4 e Meta (quando configurados). O evento <code>generate_lead</code> é a conversão principal.</p>
+                </div>
+
+                <div class="mk-callout warn">
+                    <strong>Importante:</strong> este painel funciona com o armazenamento local do navegador. Para vários computadores ou equipe, use o webhook e um CRM/planilha central. Não há login nem dados de clientes embutidos no site.
+                </div>
+            </section>
+
+            <footer class="mk-footer">
+                <span>MSX Minds · Painel de Marketing &amp; CRM · Uso interno</span>
+                <span><a href="plano.html">Plano 4.0</a> · <a href="../index.html">Site</a></span>
+            </footer>
+        </main>
+    </div>
+</div>
+
+<script src="../js/consent.js" defer></script>
+    <script src="../js/tracking.js" defer></script>
+<script src="../js/marketing.js" defer></script>
+<script src="../js/painel.js" defer></script>
+</body>
+</html>

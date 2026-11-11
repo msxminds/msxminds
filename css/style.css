@@ -10,6 +10,11 @@
 html {
     margin: 0;
     padding: 0;
+    scroll-padding-top: 170px; /* compensa o menu fixo ao clicar em âncoras */
+}
+
+@media (max-width: 768px) {
+    html { scroll-padding-top: 90px; }
 }
 
 body {
@@ -4040,4 +4045,201 @@ header {
     .roi-total .roi-result-number {
         font-size: 1.4rem;
     }
+}
+
+/* ============================================================
+   SEÇÃO "PARA QUEM É" — ROTEAMENTO POR PÚBLICO
+   ============================================================ */
+.audience-section {
+    position: relative;
+    padding: 70px 20px;
+    scroll-margin-top: 170px;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(0, 242, 254, 0.07), transparent 45%),
+        radial-gradient(circle at 85% 90%, rgba(155, 81, 224, 0.08), transparent 45%);
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.audience-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 26px 24px;
+    border-radius: 16px;
+    text-decoration: none;
+    background: linear-gradient(160deg, #182132, #0d1420 65%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    overflow: hidden;
+}
+
+.audience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.85;
+}
+
+.audience-agro::before { background: linear-gradient(90deg, #25d366, #6ee7b7); }
+.audience-industria::before { background: linear-gradient(90deg, #00f2fe, #9b51e0); }
+.audience-empresas::before { background: linear-gradient(90deg, #9b51e0, #f472b6); }
+
+.audience-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 242, 254, 0.35);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45), 0 0 28px rgba(0, 242, 254, 0.08);
+}
+
+.audience-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #b9e8ee;
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.22);
+    border-radius: 999px;
+    padding: 5px 11px;
+}
+
+.audience-agro .audience-tag {
+    color: #8ff0b4;
+    background: rgba(37, 211, 102, 0.08);
+    border-color: rgba(37, 211, 102, 0.28);
+}
+
+.audience-empresas .audience-tag {
+    color: #d8b4fe;
+    background: rgba(155, 81, 224, 0.1);
+    border-color: rgba(155, 81, 224, 0.3);
+}
+
+.audience-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: #00f2fe;
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.18);
+    margin-top: 4px;
+}
+
+.audience-agro .audience-icon {
+    color: #4ade80;
+    background: rgba(37, 211, 102, 0.08);
+    border-color: rgba(37, 211, 102, 0.2);
+}
+
+.audience-empresas .audience-icon {
+    color: #c084fc;
+    background: rgba(155, 81, 224, 0.1);
+    border-color: rgba(155, 81, 224, 0.24);
+}
+
+.audience-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 0;
+}
+
+.audience-card p {
+    font-size: 0.9rem;
+    color: #9fb0c5;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.audience-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 2px 0 8px;
+    display: grid;
+    gap: 6px;
+    font-size: 0.84rem;
+    color: #b9c8db;
+}
+
+.audience-card ul i {
+    color: #25d366;
+    font-size: 0.66rem;
+    margin-right: 7px;
+}
+
+.audience-link {
+    margin-top: auto;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: #00f2fe;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s ease;
+}
+
+.audience-card:hover .audience-link { gap: 13px; }
+
+.audience-footnote {
+    max-width: 1200px;
+    margin: 22px auto 0;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #7f8ea3;
+}
+
+.audience-footnote i { color: #00f2fe; margin-right: 5px; }
+.audience-footnote a { color: #8fd8ff; text-decoration: none; }
+.audience-footnote a:hover { text-decoration: underline; }
+
+/* Link de solução dentro dos cards 3D */
+.card-solution-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #00f2fe;
+    text-decoration: none;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.card-solution-link:hover { gap: 13px; color: #9b51e0; }
+
+@media (max-width: 1024px) {
+    .audience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .audience-card:last-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 680px) {
+    .audience-section { padding: 50px 16px; scroll-margin-top: 90px; }
+    .audience-grid { grid-template-columns: 1fr; gap: 16px; }
+    .audience-card:last-child { grid-column: auto; }
+    .audience-card { padding: 22px 18px; }
+    .audience-card h3 { font-size: 0.95rem; }
 }

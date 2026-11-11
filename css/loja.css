@@ -1,0 +1,37 @@
+/* ============================================================
+   MSX MINDS — LOJA
+   CTA de orçamento por produto
+   ============================================================ */
+
+.product-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border: 1px solid rgba(37, 211, 102, .55);
+    border-radius: 8px;
+    background: rgba(37, 211, 102, .1);
+    color: #25d366;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.product-cta:hover,
+.product-cta:focus-visible {
+    border-color: rgba(37, 211, 102, .9);
+    background: rgba(37, 211, 102, .2);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.product-cta i {
+    font-size: .95rem;
+}

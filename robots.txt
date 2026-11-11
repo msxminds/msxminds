@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /marketing/
+
+# Central de marketing e painel interno não devem ser indexados.
+# Os dados de leads são armazenados apenas no navegador do visitante.
+
+Sitemap: https://msxminds.com.br/sitemap.xml
